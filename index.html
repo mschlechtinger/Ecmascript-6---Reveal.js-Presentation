@@ -95,58 +95,53 @@
             <!-- Features 1: Classes
             Neue Schlüsselwörter: CLASS, CONSTRUCTOR und EXTEND(für Vererbung)-->
             <section>
-                <h2>Klassen</h2>
-                <pre><code data-trim contenteditable>
+                <section>
+                    <h2>Klassen</h2>
+                    <pre><code data-trim contenteditable>
                 class Car {
     constructor(make) { //constructors!
     this.make = make;
     this.currentSpeed = 25;
     }
 
-    printCurrentSpeed(){
+    printCurrentSpeed() {
         alert(this.make + ' is going ' + this.currentSpeed + ' mph.');
     }
 }
 
-
-let mustang = new Car('Mustang');
+mustang = new Car('Mustang');
 
 mustang.printCurrentSpeed();</code></pre>
 
 
 
-                <input type="image" src="Play Button.png" width="100" height="100" ID="klasse">
+                    <input type="image" src="Play Button.png" width="100" height="100" ID="klasse">
 
 
+                </section>
+                <section>
+                    <h2>VERERBUNG</h2>
 
-
-                <!--VERERBUNG
+                    <pre><code data-trim contenteditable>
 class RaceCar extends Car { //inheritance
     constructor(make, topSpeed) {
         super(make); //call the parent constructor with super
         this.topSpeed = topSpeed;
     }
 
-    goFast(){
+    goFast() {
         this.currentSpeed = this.topSpeed;
     }
 }
 
-VORHER HAT MAN ES SO GEMACHT:
-class Car {
-    constructor(make) { //constructors!
-        this.make = make;
-      this.currentSpeed = 25;
-    }
-
-    printCurrentSpeed(){
-          console.log(this.make + ' is going ' + this.currentSpeed + ' mph.');
-    }
-}
-let mustang = new Car('Mustang');
-
-stang.printCurrentSpeed();-->
-
+lambo = new Car('Lamborghini', 300);
+lambo.goFast();
+lambo.printCurrentSpeed();
+</code></pre>
+                    
+                    
+                     <input type="image" src="Play Button.png" width="100" height="100" ID="vererbung">
+                </section>
             </section>
 
 
@@ -177,7 +172,7 @@ alert("my favorite number is: " + my_fav);
             <!-- Features 3: Modules-->
             <section>
                 <h2>Module</h2>
-                
+
                 <section>
                     <h3>Erstellung eines Moduls</h3>
                     <pre><code data-trim contenteditable>
@@ -237,11 +232,11 @@ alert('Is i defined here?: ' + (typeof i !== 'undefined'));
 
             </section>
 
-                
-                
-                
-                
-                
+
+
+
+
+
 
             <!-- Abschlussfolie-->
             <section>
@@ -250,11 +245,11 @@ alert('Is i defined here?: ' + (typeof i !== 'undefined'));
                 <p>...Noch Fragen?</p>
             </section>
 
-                
-                
-                
-                
-                
+
+
+
+
+
             <!-- Quellen-->
             <section>
                 <h2>Quellen</h2>
@@ -280,6 +275,14 @@ alert('Is i defined here?: ' + (typeof i !== 'undefined'));
             alert('Mustang is going 25 mph.');
         }
 
+        
+        document.getElementById("vererbung").onclick = vererbung;
+
+        function vererbung() {
+            alert('Lamborghini is going 300 mph.');
+        }
+        
+        
         document.getElementById("block").onclick = block;
 
         function block() {
